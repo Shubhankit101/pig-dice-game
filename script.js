@@ -17,8 +17,7 @@ score1Element.textContent = 0;
 diceElement.classList.add('hidden'); //Hiding the dice initially
 
 //Rolling dice Logic 
-btnRoll.addEventListener('click', function()
-{
+btnRoll.addEventListener('click', function() {
     //Generating A random dice roll
     const dice = Math.trunc(Math.random() * 6) + 1; //Math.Trunc will remove the decimal numbers
 
@@ -28,11 +27,9 @@ btnRoll.addEventListener('click', function()
     console.log(`number in dice is ${dice}`);
 
     //Check for rolled If Rolled 1 Switch the Player
-    if(dice !== 1){
+    if (dice !== 1) {
         // Add the score from the dice
         currentScore += dice;
-        current0Element.textContent = currentScore; 
-    }
-    else {}
+        current0Element.textContent = currentScore;
+    } else {}
 });
-
