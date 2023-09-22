@@ -65,3 +65,21 @@ btnHold.addEventListener('click', function() {
             switchPlayer(); //switching to the next Player
     }
 });
+
+//Resetting the Game 
+btnNew.addEventListener('click', function(){
+    //Resetting the score
+    totalScore[0] = 0;
+    totalScore[1] = 0;
+    document.getElementById(`score--0`).textContent = 0;
+    document.getElementById(`score--1`).textContent = 0;
+    document.getElementById(`current--0`).textContent = 0;
+    document.getElementById(`current--1`).textContent = 0;
+    currentScore = 0;
+    diceElement.classList.add('hidden'); //hiding the dice
+    document.querySelector(`.player--${activePlayer}`).classList.remove('player--winner');
+    document.querySelector(`.player--0`).classList.add('player--active');
+    document.querySelector(`.player--1`).classList.remove('player--active');
+
+    isPlaying = true;
+});
