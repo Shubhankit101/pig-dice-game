@@ -1,4 +1,4 @@
-![image](https://github.com/Shubhankit101/pig-dice-game/assets/45731902/31549482-5ab6-4ff8-b1f9-dc247a4fa122)# Pig Dice Game
+# Pig Game
 <a href="https://shubhankit101.github.io/pig-dice-game/">Live Preview</a>
 
 This is a web-based implementation of the classic dice game Pig, created using HTML, CSS, and vanilla JavaScript.
