@@ -10,17 +10,26 @@ const current0Element = document.getElementById('current--0');
 const current1Element = document.getElementById('current--1');
 const player0Element = document.querySelector('.player--0');
 const player1Element = document.querySelector('.player--1');
-
-const totalScore = [0, 0];
-let currentScore = 0;
-let activePlayer = 0;
-let isPlaying = true;
-// Starting Conditions
-//Setting the Score to 0
-score0Element.textContent = 0;
-score1Element.textContent = 0;
-diceElement.classList.add('hidden'); //Hiding the dice initially
-
+let totalScore, currentScore, activePlayer , isPlaying;
+// Starting Conditions using init functions
+const init = function(){
+    totalScore = [0, 0];
+    currentScore = 0;
+    activePlayer = 0;
+    isPlaying = true;
+    //Setting the score to 0.
+    score0Element.textContent = 0;
+    score1Element.textContent = 0;
+    diceElement.classList.add('hidden'); //Hiding the dice initially
+    current0Element.textContent = 0;
+    current1Element.textContent = 0;
+    currentScore = 0;
+    player0Element.classList.remove('player--winner');
+    player1Element.classList.remove('player--winner');
+    document.querySelector(`.player--0`).classList.add('player--active');
+    document.querySelector(`.player--1`).classList.remove('player--active');
+}
+init();
 //function to switch 
 const switchPlayer = function() {
         currentScore = 0;
@@ -56,7 +65,7 @@ btnHold.addEventListener('click', function() {
         document.getElementById(`score--${activePlayer}`).textContent = totalScore[activePlayer];
 
         //In case of Player winning
-        if (totalScore[activePlayer] >= 20) {
+        if (totalScore[activePlayer] >= 100) {
             isPlaying = false;
             document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
             document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
@@ -67,19 +76,4 @@ btnHold.addEventListener('click', function() {
 });
 
 //Resetting the Game 
-btnNew.addEventListener('click', function(){
-    //Resetting the score
-    totalScore[0] = 0;
-    totalScore[1] = 0;
-    document.getElementById(`score--0`).textContent = 0;
-    document.getElementById(`score--1`).textContent = 0;
-    document.getElementById(`current--0`).textContent = 0;
-    document.getElementById(`current--1`).textContent = 0;
-    currentScore = 0;
-    diceElement.classList.add('hidden'); //hiding the dice
-    document.querySelector(`.player--${activePlayer}`).classList.remove('player--winner');
-    document.querySelector(`.player--0`).classList.add('player--active');
-    document.querySelector(`.player--1`).classList.remove('player--active');
-
-    isPlaying = true;
-});
+btnNew.addEventListener('click', init);
