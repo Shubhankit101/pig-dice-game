@@ -10,9 +10,9 @@ const current0Element = document.getElementById('current--0');
 const current1Element = document.getElementById('current--1');
 const player0Element = document.querySelector('.player--0');
 const player1Element = document.querySelector('.player--1');
-let totalScore, currentScore, activePlayer , isPlaying;
+let totalScore, currentScore, activePlayer, isPlaying;
 // Starting Conditions using init functions
-const init = function(){
+const init = function() {
     totalScore = [0, 0];
     currentScore = 0;
     activePlayer = 0;
